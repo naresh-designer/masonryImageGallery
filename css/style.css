@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Montserrat:wght@100;400&family=Poppins:wght@200;400&family=Rajdhani:wght@300&family=Roboto+Condensed:wght@300&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.image_container{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-auto-flow: dense;
+    /* grid-template-rows: repeat(2, 200px); */
+    grid-template-columns: repeat(5, 1fr);
+    /* grid-auto-rows: 200px; */
+    gap: 10px;
+
+}
+.image_container .image__box{
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+}
+.image_container .image__box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+    cursor: pointer;
+    filter: grayscale(100);
+}
+.image_container .image__box img:hover{
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+.image_container .image__box:nth-child(1){
+    grid-row: span 2;
+}
+.image_container .image__box:nth-child(2){
+    grid-column: span 2;
+}
+.image_container .image__box:nth-child(3){
+    grid-row: span 2;
+    grid-column: span 1;
+}
+.image_container .image__box:nth-child(4){
+    grid-row: span 2;
+}
+.image_container .image__box:nth-child(6){
+    grid-row: span 2;
+}
+.image_container .image__box:nth-child(7){
+    grid-column: span 2;
+}
+.image_container .image__box:nth-child(8){
+    grid-column: span 2;
+}
+.image_container .image__box:nth-child(9){
+    grid-row: span 2;
+    grid-column: span 2;
+}
+.image_container .image__box:nth-child(10){
+    grid-column: span 1;
+}
+.image_container .image__box:nth-child(12){
+    grid-row: span 2;
+}
+.image_container .image__box:nth-child(13){
+    grid-column: span 2;
+}
+
+.image__box .pop__image{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, .8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s ease-in-out;
+    z-index: 9;
+}
+
+.image__box.active .pop__image{
+    opacity: 1;
+    visibility: visible;
+}
+.pop__image .pop_show__image{
+    position: relative;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.pop__image .pop_show__image img{
+    height: auto;
+    filter: grayscale(0);
+}
+.pop__image .pop_show__image img:hover{
+    transform: scale(1);
+}
+.pop__image .pop_show__image .close{
+    position: absolute;
+    top: -28px;
+    right: -28px;
+    font-size: 30px;
+}
+.pop__image .pop_show__image .close a{
+    color: #fff;
+}
